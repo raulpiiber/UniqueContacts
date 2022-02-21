@@ -7,6 +7,8 @@ Create dotenv file (.env) in project root directory. Add configuration:
  * MAILCHIMP_SERVER=...
  * MAILCHIMP_LIST_ID=...
 
+ Please see example.env file as example.
+
 ## Install:
 npm install
 
