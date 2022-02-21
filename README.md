@@ -1,3 +1,12 @@
+## Configuration:
+Create dotenv file (.env) in project root directory. Add configuration:
+ * SERVER_PORT=... (example: SERVER_PORT=3000)
+ * PIPEDRIVE_URL=...
+ * PIPEDRIVE_API_TOKEN=...
+ * MAILCHIMP_API_KEY=...
+ * MAILCHIMP_SERVER=...
+ * MAILCHIMP_LIST_ID=...
+
 ## Install:
 npm install
 
@@ -5,8 +14,8 @@ npm install
 npm run start
 
 ## APIs:
-GET localhost:3000/uniqueContacts/mailchimp/pipedrive  
-GET localhost:3000/uniqueContacts/pipedrive/mailchimp
+GET localhost:<SERVER_PORT>/uniqueContacts/mailchimp/pipedrive  
+GET localhost:<SERVER_PORT>/uniqueContacts/pipedrive/mailchimp
 
 **NB!** Mailchimp API returns maximum 1000 contacts on one request, for bigger lists multiple queries with offset parameter must be done (not implemented).
 
