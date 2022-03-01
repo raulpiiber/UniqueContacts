@@ -31,10 +31,18 @@ app.get('/uniqueContacts/:serviceA/:serviceB', (req, res) => {
   
   uniqueSerice.findUnique(serviceA, serviceB)
   .then((uniqueUsers) => res.send(uniqueUsers))
+  .catch(err => {
+    console.log(err)
+    res.send(systemErrorMessage(err))
+  })
 });
 
 function unknownServiceMessage(service: string): object {
   return {message : `Unknown service ${service}, valid services are: ${getValidServices()}`};
+}
+
+function systemErrorMessage(error: Error): object {
+  return {errorMessage : 'Unable to get contacts'}
 }
 
 function getValidServices() : string {
